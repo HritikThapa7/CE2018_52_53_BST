@@ -10,6 +10,7 @@ class BST{
 		virtual int max_e() =0;
 
 		virtual int min()=0;
+		virtual void inOrderTraversal()=0;
 		
 
 
