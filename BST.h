@@ -7,10 +7,11 @@ class BST{
 		virtual void preOrderTraversal()=0;
 		virtual bool search(int data)=0;
 
-		virtual int max_e() =0;
+		//virtual int max_e() =0;
 
 		virtual int min()=0;
 		virtual void inOrderTraversal()=0;
+};
 		
 
 

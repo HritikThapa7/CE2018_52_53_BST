@@ -24,6 +24,8 @@ class LLBST : public BST{
 	void preOrderTraversal();
 	bool search(int data);
 	bool isEmpty();
+	void inOrderTraversal();
+	int min();
 };
 
 class Stack{

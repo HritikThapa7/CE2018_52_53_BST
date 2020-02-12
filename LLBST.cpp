@@ -103,6 +103,23 @@ void LLBST::preOrderTraversal(){
 
 }
 
+void LLBST::inOrderTraversal(){
+	Stack st;
+	Node* a = root;
+	while(!st.isEmpty() || a != NULL){
+		while(a != NULL){
+			st.push(a);
+			a = a->left ;
+		}
+
+		a = st.pop();
+		std::cout << a->info <<" ";
+		a = a->right;
+	}
+
+}
+
+
 bool LLBST::search(int data){
     Node* prev;
     prev=root;
@@ -120,6 +137,14 @@ bool LLBST::search(int data){
     return false;
 }
 
+int LLBST:: min(){
+	Node* a = root;
+	while(a->left != NULL){
+		a = a->left;
+	}
+	return a->info;
+}
+
 bool LLBST::isEmpty() {
 	if(root==NULL){
 	    return true;
@@ -132,13 +157,17 @@ bool LLBST::isEmpty() {
 
 int main(){
 	LLBST h;
-	h.add(1);
 	h.add(5);
+	h.add(8);
 	h.add(2);
 	h.add(7);
-	h.add(12);
-	
+	h.add(13);
+
 	h.preOrderTraversal();
+	h.inOrderTraversal();
+
+	
+	std::cout<<"\nThe smallest element is "<< h.min() <<std::endl;
 	
     if(h.search(12)){
     	std::cout<<"Found"<<std::endl;
