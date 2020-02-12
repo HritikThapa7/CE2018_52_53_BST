@@ -200,7 +200,7 @@ void ArrayBST::deleteKey(int key){
 			return;
 	}
 		else if(ArrayBST::search(key)==false)
-		cout<<"Sorry the BST doesnt contain "<< key <<" . "<<endl;
+		cout<<"Sorry the BST doesn't contain "<< key <<" . "<<endl;
 }
 
 
@@ -222,8 +222,6 @@ int main(){
 	cout<<endl<<"Minm element is:" << a.min()<<endl;
 	cout<<endl<<"Maxm element is:" << a.max()<<endl;
 	cout<<"Deletion: "<<endl;
-	a.deleteKey(8);
-	return 0;
-	
+	a.deleteKey(10);
 	return 0;
 }
