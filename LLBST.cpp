@@ -136,13 +136,16 @@ bool LLBST::search(int data){
     }
     return false;
 }
-
 int LLBST:: min(){
+	Node* res = min(root);
+	return res->info;
+}
+Node* LLBST:: min(Node *root){
 	Node* a = root;
 	while(a->left != NULL){
 		a = a->left;
 	}
-	return a->info;
+	return a;
 }
 
 bool LLBST::isEmpty() {

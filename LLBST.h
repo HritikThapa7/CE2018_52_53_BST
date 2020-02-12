@@ -26,6 +26,7 @@ class LLBST : public BST{
 	bool isEmpty();
 	void inOrderTraversal();
 	int min();
+	Node* min(Node *root);
 };
 
 class Stack{
