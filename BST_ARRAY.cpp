@@ -98,6 +98,10 @@ bool ArrayBST::search(int key){
 	
 	
 	//preOrder traversal
+
+void ArrayBST::preOrderTraversal(){
+	preOrderTraversal(1);
+}
 	
 void ArrayBST::preOrderTraversal(int currentIndex) {
     if((currentIndex >= 0) && (element[currentIndex] != NULL)){
@@ -162,6 +166,10 @@ int ArrayBST::minNode(int index){
     }
 
     return element[index];
+}
+
+void ArrayBST::deleteKey(){
+	deleteKey(1);
 }
 
 void ArrayBST::deleteKey(int key){

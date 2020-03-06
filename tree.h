@@ -10,14 +10,18 @@ class ArrayBST : public BST {
 		
 		
 	void add(int data);
+	void preOrderTraversal();
 	void preOrderTraversal(int currentIndex);
+	void inOrderTraversal();
 	void inOrderTraversal(int currentIndex);
 	bool search(int key);
 	int getLeftChild(int currentIndex);
 	int getRightChild(int currentIndex);
 	int min();
 	int max();
+	void deleteKey();
 	void deleteKey(int key);
+
 	int returnIndex(int key);
 	int minNode(int index);
 };

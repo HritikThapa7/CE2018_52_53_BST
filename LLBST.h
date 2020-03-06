@@ -20,13 +20,18 @@ class LLBST : public BST{
 	public:	
 	Node* root;
 	LLBST();
+	Node* getroot();
 	void add(int data);
 	void preOrderTraversal();
 	bool search(int data);
 	bool isEmpty();
 	void inOrderTraversal();
 	int min();
+	int max();
 	Node* min(Node *root);
+	Node* max(Node *root);
+	void deleteKey();
+	Node* deleteKey(Node *root, int key);
 };
 
 class Stack{

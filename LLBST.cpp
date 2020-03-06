@@ -13,6 +13,10 @@ LLBST::LLBST(){
 	root = NULL;
 }
 
+Node* LLBST::getroot(){
+	return root;
+}
+
 bool Stack::isEmpty(){
 	if(stack == NULL){
 		return true;
@@ -148,6 +152,19 @@ Node* LLBST:: min(Node *root){
 	return a;
 }
 
+int LLBST::max(){
+	Node* res = max(root);
+	return res->info;
+}
+
+Node* LLBST::max(Node* root){
+	Node *p=root;
+	while(p->right!=NULL){
+		p=p->right;
+	}
+	return p;
+}
+
 bool LLBST::isEmpty() {
 	if(root==NULL){
 	    return true;
@@ -155,6 +172,44 @@ bool LLBST::isEmpty() {
 	else{
 	    return false;
 	}
+}
+
+void LLBST::deleteKey(){
+	deleteKey(root,6);
+}
+
+Node* LLBST::deleteKey(Node* root, int key){
+	if(root==NULL){
+		return root;
+	}
+	if(key<root->info){
+		return deleteKey(root->left,key);
+	}
+	else if(key>root->info){
+		return deleteKey(root->right,key);
+	}
+	else{
+		if(root->left==NULL){
+			Node* temp=root->right;
+			delete(root);
+			return temp;
+		}
+		else if(root->right==NULL){
+			Node *temp=root->left;
+			delete(root);
+			return temp;
+		}
+		else{
+			Node* current = root->right; 
+    		while (current && current->left != NULL) {
+    			current = current->left;
+			}
+			Node* temp=current;
+			root->info=temp->info;
+			root->right=deleteKey(root->right,temp->info);
+		}
+	}
+	return root;
 }
 
 
@@ -165,7 +220,8 @@ int main(){
 	h.add(2);
 	h.add(7);
 	h.add(13);
-
+	Node* p = h.deleteKey(h.getroot(), 2);
+	
 	h.preOrderTraversal();
 	h.inOrderTraversal();
 
